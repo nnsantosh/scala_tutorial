@@ -88,10 +88,10 @@ If you don't give a name to a function then it is an anonymous function.
 Example:
 Standard function
 def doubler(i : Int):Int={
-  return i *2
+  return i * 2
 }
 Anonymous function
-(i:Int) => {i*2}:Int
+(i:Int) => {i * 2}:Int
 
 This syntax is known as function literal syntax.
 You can assign anonymous function to a variable in order to  call it.
