@@ -72,6 +72,25 @@ Example: If a program uses Math.sqrt(4.0) we can replace all references of Math.
 
 # First class Functions:
 If you can treat a function as a value, it is a first class function.
+You should be able to do everything with a function that you can do with a value.
+1. You can assign it to a variable.
+2. You can pass it as an argument to other functions.
+3. You can return it as value from other functions.
+In scala all functions are first class functions by default.
+
+# Higher Order Functions:
+A function that does atleast one of the following is a higher order function:
+1. Takes one or more functions as arguments.
+2. Returns a function as its result.
+
+# Anonymous Function
+If you don't give a name to a function then it is an anonymous function.
+Example:
+Standard function
+def doubler(i : Int):Int={
+  return i *2
+}
+
 
 
 
