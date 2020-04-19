@@ -387,7 +387,7 @@ A type system is a set of rules that assigns a property called type to the vario
 Scala is a statically typed language meaning compiler verifies the type rules.
 Early protection and better performance since the compiler can apply some optimizaiton because it can apply type checking.
 
-Scala has a unified type system and the heirarchy looks like this
+Scala has a unified type system and the heirarchy looks like this:
 ![Scala Unified Type System](https://docs.scala-lang.org/resources/images/tour/unified-types-diagram.svg)
 
 Scala value classes do not need new keyword.
@@ -397,7 +397,26 @@ var y: Long = 7483;
 val x: Int = 23456;
 va z : Char = 'Z';
 
+Implicit Type conversion in Scala:
 ![Scala Implicit type casting heirarhy](https://docs.scala-lang.org/resources/images/tour/type-casting-diagram.svg)
+
+You can use new keyword to instantiate reference classes
+Example:
+val s = new String("Hi there!");
+
+You cannot create an instance of Nothing so you cannot assign "Nothing" to a value or a variable.
+
+For value classes you cannot assign Null. Null can be assigned only for reference clases.
+
+Nothing is the direct child of every value class. But you cannot assign Null or Nothing to a value.
+
+That means you cannot create a value in Scala without initializing it with some valid value other than null and nothing.
+
+Scala has a built in type inference mechanism.So you can leave the type annotation and let Scala infer it automatically.
+But for below two scenarios you need to specify the type annoation:
+1. Function parameters
+2. Return type of a recursive function
+
 
 
 
