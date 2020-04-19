@@ -376,7 +376,13 @@ If you call getHike with an employee id that does not exist
 getHike(1006) then it throws exception: java.util.NoSuchElementException: key not found:1006
 
 So where is the getHike validating for the employee number?
-Notice that the variables e and p are free variables for the anonymous function returned from the last line of getComputation.
+The variables e and p are local variables for getComputation function. But they are  free variables for the anonymous function returned from the last line of getComputation.
+The last line of getComputation is closure.
+When we returned it from the getComputation it carries the state of e and p with it. So getHike contains the data with it.
+
+Closures and their capability to carry state is incredible. It saves lot of complicated and unnecessary code and simplifies solution.
+
+
 
 
     
