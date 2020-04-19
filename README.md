@@ -1,4 +1,4 @@
-# scala_tutorial
+# SCALA TUTORIAL
 Scala basics and functional programming concepts to remember
 
 ## Why Scala
@@ -207,6 +207,100 @@ for(i <- 0 to customers.length -1){
       println("We haven't used f yet")
       f + f
     }
+    
+    twice({factorial(15)/factorial(11)})
+      You called factorial 15
+      You called factorial 11
+      You called factorial 15
+      You called factorial 11
+    So the same function f will be called twice
+    
+    This can be avoided using:
+    def twice(f: => Int) ={
+      val i = f 
+      println("We haven't used i yet")
+      i+i
+    }
+    
+    In this function value is cached in value i.
+    And hence the function f will be called only once and its value will be reused.
+    twice(factorial(15)/factorial(11))
+    You called factorial 15
+    You called factorial 11
+    We haven't used i yet
+    result: Int = 100
+    
+1. The default evaluation in Scala is strict.
+2. Scala evaluates function parameters before passing the value to a function. Hence they are evaluated only once.
+3. If the parameter value is a function(In the case of higher order functions), Scala evaluates it inside the body of the function on       every use.
+4. If you don't want multiple evaluations of a function value, you can cache it.
+
+## Lazy Evaluation
+lazy val l = factorial(15)/factorial(11)
+l:Int = <lazy>
+  
+In the above case factorial function is not yet called.
+Where as in below case factorial function is called. value derived and substitued for s.
+val s = factorial(15)/factorial(11)
+
+println(l)
+Now the functions will be called to evaluate the expressions.
+
+Now lets check the impact of laziness on a higher order function:
+ def twice(f: => Int) ={
+      lazy val i = f 
+      println("We haven't used i yet")
+      i+i
+ }
+  twice(factorial(15)/factorial(11))
+    We haven't used i yet
+    You called factorial 15
+    You called factorial 11
+  result: Int = 100
+ 
+1. Scala supports Strict and lazy evaluations.
+2. The default method is the Strict evaluation.
+3. You can cache a pure function value in case of a Higher order function.
+4. You can make an expression lazy by using Lazy val.
+5. You can make a lazy function by caching it to a lazy val.
+
+## Why Lazy?
+The laziness is mostly used to create data structures to handle large volumes of data efficiently.
+Apache spark libraries are the most common examples.
+Spark RDD, they implement all transformations as lazy operations.
+
+Scala gives lazy alternative to List and it is called Stream.
+Lazy evaluations can combine operations.
+
+Lets take a simple use case where we want to parse log file and filter first two lines containing text "error" from this file.
+Using strict evaluation:
+val s = Source.fromFile("/root/ws/test_proj/error.log").getLines().toList.filter(_.contains("[error]")).take(2)
+Using stream:
+val s = Source.fromFile("/root/ws/test_proj/error.log").getLines().toStream.filter(_.contains("[error]")).take(2)
+
+Stream -> Gets one line + applies filter
+List -> Gets all lines + Applies filter to all the lines
+
+The list is evaluating one operation at a time for all the lines. But the stream combines multiple operations and implements all of them together on each line.
+This kind of approach gives an advantage when we are dealing with large volumes of data and applying a series of operations.
+This concept is so powerful that it allows us to create a data set of infinite length.
+
+For Example: Lets take fibonacci series
+With strict evaluation if you try to create fibonacci series system will run out of memory pretty soon.
+But with lazy evaluation this can be easily achieved
+def fibFrom(a:Int,b:Int):Stream[Int] = a #:: fibFrom(b,a+b)
+val f = fibFrom(1,2)
+f.takeWhile(_<10) for each println
+1
+2
+3
+5
+8
+
+
+
+
+
     
  
  
