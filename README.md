@@ -453,6 +453,21 @@ If we have more than one input parameter:
 <object> <method>  <(parameter1, parameter2... parametern)>
 
 If we don't have any input parameter:
+dont pass any parameter
+
+# Unary operator
+
+Example:
+
+val i =10
+-i * 2
+
+i.unary_- * 2
+
+Scala allows only four symbols as unary operators: +  -  !  ~
+
+
+
 
 
 
