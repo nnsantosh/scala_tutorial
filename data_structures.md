@@ -52,36 +52,36 @@ res0: (Int, Int) = (1,2)
 ## Maps (both Mutable and Immutable map is available)
 It can hold basic datatypes.
 
-Map(1 -> 2)
-Map("foo" -> "bar")
-This looks like special syntax but remember back to our discussion of Tuple that -> can be used to create Tuples.
+Map(1 -> 2) <br />
+Map("foo" -> "bar") <br />
+This looks like special syntax but remember back to our discussion of Tuple that -> can be used to create Tuples. <br />
 
-Map() also uses that variable argument syntax we learned back in Lesson #1: Map(1 -> "one", 2 -> "two") which expands into Map((1, "one"), (2, "two")) with the first element being the key and the second being the value of the Map.
+Map() also uses that variable argument syntax we learned back in Lesson #1: Map(1 -> "one", 2 -> "two") which expands into Map((1, "one"), (2, "two")) with the first element being the key and the second being the value of the Map. <br />
 
-Maps can themselves contain Maps or even functions as values.
+Maps can themselves contain Maps or even functions as values. <br />
 
-Map(1 -> Map("foo" -> "bar"))
-Map("timesTwo" -> { timesTwo(_) })
+Map(1 -> Map("foo" -> "bar")) <br />
+Map("timesTwo" -> { timesTwo(_) }) <br />
 
-Operations in Class mutable.Map
+Operations in Class mutable.Map <br />
 
-WHAT IT IS	WHAT IT DOES
-Additions and Updates:	 
-ms(k) = v	(Or, written out, ms.update(x, v)). Adds mapping from key k to value v to map ms as a side effect, overwriting any previous mapping of k.
-ms += (k -> v)	Adds mapping from key k to value v to map ms as a side effect and returns ms itself.
-ms += (k -> v, l -> w)	Adds the given mappings to ms as a side effect and returns ms itself.
-ms ++= kvs	Adds all mappings in kvs to ms as a side effect and returns ms itself.
-ms put (k, v)	Adds mapping from key k to value v to ms and returns any value previously associated with k as an option.
-ms getOrElseUpdate (k, d)	If key k is defined in map ms, return its associated value. Otherwise, update ms with the mapping k -> d and return d.
-Removals:	 
-ms -= k	Removes mapping with key k from ms as a side effect and returns ms itself.
-ms -= (k, l, m)	Removes mappings with the given keys from ms as a side effect and returns ms itself.
-ms --= ks	Removes all keys in ks from ms as a side effect and returns ms itself.
-ms remove k	Removes any mapping with key k from ms and returns any value previously associated with k as an option.
-ms retain p	Keeps only those mappings in ms that have a key satisfying predicate p.
-ms.clear()	Removes all mappings from ms.
-Transformation:	 
-ms transform f	Transforms all associated values in map ms with function f.
-Cloning:	 
-ms.clone	Returns a new mutable map with the same mappings as ms.
+WHAT IT IS	WHAT IT DOES <br />
+Additions and Updates: <br />
+ms(k) = v	(Or, written out, ms.update(x, v)). Adds mapping from key k to value v to map ms as a side effect, overwriting any previous mapping of k. <br />
+ms += (k -> v)	Adds mapping from key k to value v to map ms as a side effect and returns ms itself. <br />
+ms += (k -> v, l -> w)	Adds the given mappings to ms as a side effect and returns ms itself. <br />
+ms ++= kvs	Adds all mappings in kvs to ms as a side effect and returns ms itself. <br />
+ms put (k, v)	Adds mapping from key k to value v to ms and returns any value previously associated with k as an option. <br />
+ms getOrElseUpdate (k, d)	If key k is defined in map ms, return its associated value. Otherwise, update ms with the mapping k -> d and return d. <br />
+Removals:	<br />
+ms -= k	Removes mapping with key k from ms as a side effect and returns ms itself. <br />
+ms -= (k, l, m)	Removes mappings with the given keys from ms as a side effect and returns ms itself. <br />
+ms --= ks	Removes all keys in ks from ms as a side effect and returns ms itself. <br />
+ms remove k	Removes any mapping with key k from ms and returns any value previously associated with k as an option. <br />
+ms retain p	Keeps only those mappings in ms that have a key satisfying predicate p. <br />
+ms.clear()	Removes all mappings from ms. <br />
+Transformation:	<br />
+ms transform f	Transforms all associated values in map ms with function f. <br />
+Cloning: <br />
+ms.clone	Returns a new mutable map with the same mappings as ms. <br />
 
