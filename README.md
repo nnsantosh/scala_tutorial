@@ -459,10 +459,10 @@ dont pass any parameter
 
 Example:
 
-val i =10 \
--i * 2 \
+val i =10 
+-i * 2 
 
-i.unary_- * 2 \
+i.unary_- * 2 
 
 Scala allows only four symbols as unary operators: +  -  !  ~
 
