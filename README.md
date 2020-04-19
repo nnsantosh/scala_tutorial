@@ -297,8 +297,86 @@ f.takeWhile(_<10) for each println
 5
 8
 
+## Pattern Matching
+What is pattern matching?
+The functional programming is going to look into matching objects againts other objects.
+Most common example is type checking of a object.
+Example of typed pattern match:
+def myTest(x:any)={
+  x match{
+    case i:Integer => "Its an integer="+i
+    case s:String => "Its a String="+s
+    case d:Double => "Its a double="+d
+    case _ => "Oops! something else"
+    }
+}
 
+Scala pattern matching gives us a convenient alternative approach which looks like Java's switch statement.
+In this example when the object x matches with an Integer type, Scala binds it to i.
+This automatic binding saves you from casting the x to a matching type.
 
+## Closures
+What is a closure?
+
+A closure is a function. Like any other scala function, a closure may be pure or impure. It may be named or anonymous, but its primarily a function.
+
+A function that uses one or more free variables is known as a closure.
+
+What is a free variable?
+A variable that is not yet bound to the function with a valid value is called free variable.
+Example:
+def getHike(salary:Double) = salary * p/100
+In the above example p is a free variable.
+
+The scala compiler looks into the so called nearest local lexical environment, in which that Function was defined and tries to find a binding.
+
+## How does a change in value of free variable impact the closure?
+When you execute a closure, it takes the most recent state of the free variables. A closure may be pure or impure depending on the type of the free variable. If free variable is val then it will be pure. But if free variable is var then it will be impure.
+
+## What if the closure modifies the free variable?
+If a closure sets the free variable, the changes are visible outside the closure.
+
+## Why Closure? What are the benefits?
+Lets assume we have list of employee numbers:
+val l = (1001 to 1005).toList
+
+We want a function that we can apply to all of these ids and get the the hike.
+l.map(getHike)
+But for that we would need salary of every employee and only the employee number will not suffice.
+
+List((1001,3500.0),(1002,5160.0),(1003,2100.0),(1004,3672.0),(1005,3400.0))
+
+Let us take another function getComputation
+def getComputation(empId : Int)={
+  //Load employee and their current salary
+  val e:Map[Int,Double] = Map(1001 -> 35000.00,
+                          1002 -> 43000.00
+                          1003 -> 28000.00
+                          1004 -> 54000.00
+                          1005 -> 17000.00)
+  //Some logic to derive percentage for each employee
+  val p:Map[Int,Double] = Map(1001 -> 10.00,
+                          1002 -> 12.00
+                          1003 -> 7.50
+                          1004 -> 6.80
+                          1005 -> 20.00)
+  (empId, e(empId) * p(empId) / 100.00)
+}
+getComputation: Int => (Int, Double)
+
+getComputation is an higher order function that returns another function
+
+//The variable getHike is holding an anonymous function
+val getHike = getComputation
+getHike: Int => (Int,Double) = <functional>
+
+So now if you call getHike with employee id 
+getHike(1001) it returns (1001,3500.00)
+If you call getHike with an employee id that does not exist 
+getHike(1006) then it throws exception: java.util.NoSuchElementException: key not found:1006
+
+So where is the getHike validating for the employee number?
+Notice that the variables e and p are free variables for the anonymous function returned from the last line of getComputation.
 
 
     
