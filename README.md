@@ -433,21 +433,21 @@ Scala implements the arithmetic, logical and bitwise operators as methods.
 
 ## How do we call these methods?
 Example:
-val i = 10
-i.(+)5
-i.(-)5
+val i = 10  <br />
+i.(+)5  <br />
+i.(-)5  <br />
 
 Since the above dot notation is not following mathmetical notation scala allows below syntax:
-i + 5
-i - 5
+i + 5  <br />
+i - 5  <br />
 
 Every value in Scala is an object.
 Every method in Scala is an operator.
 
 Scala allows object oriented notation(dot notation) as well as the operator notation for making a method call.
 Example:
-i to 20
-i.to(20)
+i to 20  <br />
+i.to(20)  <br />
 
 If we have more than one input parameter:
 <object> <method>  <(parameter1, parameter2... parametern)>
