@@ -396,8 +396,8 @@ Example:
 var y: Long = 7483;
 val x: Int = 23456;
 va z : Char = 'Z';
-
 Implicit Type conversion in Scala:
+
 ![Scala Implicit type casting heirarhy](https://docs.scala-lang.org/resources/images/tour/type-casting-diagram.svg)
 
 You can use new keyword to instantiate reference classes
