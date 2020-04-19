@@ -133,6 +133,87 @@ for(i <- 0 to customers.length -1){
  Scala provides iterators.
  Example: customers foreach remindPayment
  
+ ## Immutability
+ Meaning is unable to change.
+ In FP we have
+ 1. var - You can change it after initializing
+ 2. val- You cannot change once it is initialized
+ 
+ Immutability helps to adopt a mathematical approach and create pure functions.
+ Immutable objects are more thread safe.
+ It allows a thread to act upon a immutable object without worrying about other threads because it knows that no one is modifying the    object.
+ 
+ ## Recursion and Tail Recursion
+ How do we approach recursion?
+ 1. Identify the list
+ 2. Implement the termination condition.
+ 3. Compute the head and recurs with the tail.
+ 
+ For Example: Factorial of a number
+ def factorial(n:Int)={
+    if(n <=0)
+      return 1
+    else return n * factorial(n-1)
+  }
+ 
+ In recursion call stack is created and every call is waiting for the next call to complete.
+ In recursion every call to the function itself results in entry in the stack.
+ So for large programs it can quickly run out of memory.
+ So a loop is better than recursion if you consider memory requirements and performance.
+ Scala compiler knows this and tries to optimize recursive calls.
+ 
+ A tail call or tail recursion is a function call performed as the last action. It means your recursive call should be the last operation in your function.
+ 
+ In the above factorial function multiplication is the last operation. If we can make the recursive call as the last action then it will be tail recursion. This can be done as shown below:
+ 
+ def factorial(n:Int, f:Int)={
+  if(n <= 0){
+      return f
+   else 
+     return factorial(n-1,n*f)
+ }
+ The scala compiler internally converts this into loop.
+ 
+ ## Statements
+ A statement is the smallest standalone element that expresses some action to be carried out.
+ 
+ # Functional Statements
+ A functional statement returns a value.
+ val x = println("Hello")
+ In scala the return type of println is Unit
+ x: Unit = ()
+ Every statement in scala can return some value.Since scala statements return a value some people dont' call them a statement but instead call them as expression.
+ 
+ ## Benefits of a statement returning a value
+ It helps to achieve immutability.
+ 
+ ## Strict and Non-Strict(Lazy) evaluation
+ Strict means evaluate the expression now.
+ Lazy means evaluate on the first use.
+ 
+ 1. Variable assignment
+    val s = factorial(15)/factorial(11)
+    First these function expressions are evaluated and then the result is assigned to value s.
+
+2.  Function parameters
+    def twice(i:Int)={
+      return i + i;
+    }
+    Now to invoke this : twice(factorial(15)/factorial(11))
+    In order to call this function first the function expression value is evaluated.
+    
+3. Higher Order functions
+    def twice(f: => Int) ={
+      println("We haven't used f yet")
+      f + f
+    }
+    
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
