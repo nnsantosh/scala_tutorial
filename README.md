@@ -302,14 +302,14 @@ What is pattern matching?
 The functional programming is going to look into matching objects againts other objects.
 Most common example is type checking of a object.
 Example of typed pattern match:
-def myTest(x:any)={
-  x match{
-    case i:Integer => "Its an integer="+i
-    case s:String => "Its a String="+s
-    case d:Double => "Its a double="+d
-    case _ => "Oops! something else"
-    }
-}
+def myTest(x:any)={ <br />
+  x match{ <br />
+    case i:Integer => "Its an integer="+i <br />
+    case s:String => "Its a String="+s <br />
+    case d:Double => "Its a double="+d <br />
+    case _ => "Oops! something else" <br />
+    } <br />
+} <br />
 
 Scala pattern matching gives us a convenient alternative approach which looks like Java's switch statement.
 In this example when the object x matches with an Integer type, Scala binds it to i.
