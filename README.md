@@ -382,6 +382,13 @@ When we returned it from the getComputation it carries the state of e and p with
 
 Closures and their capability to carry state is incredible. It saves lot of complicated and unnecessary code and simplifies solution.
 
+## Scala Types or Type System
+A type system is a set of rules that assigns a property called type to the various programming constructs, such as variables, expressions, functions or modules.
+Scala is a statically typed language meaning compiler verifies the type rules.
+Early protection and better performance since the compiler can apply some optimizaiton because it can apply type checking.
+
+Scala has a unified type system and the heirarchy looks like this
+![Scala Unified Type System](https://docs.scala-lang.org/resources/images/tour/unified-types-diagram.svg)
 
 
 
