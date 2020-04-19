@@ -390,6 +390,16 @@ Early protection and better performance since the compiler can apply some optimi
 Scala has a unified type system and the heirarchy looks like this
 ![Scala Unified Type System](https://docs.scala-lang.org/resources/images/tour/unified-types-diagram.svg)
 
+Scala value classes do not need new keyword.
+All the value classes are instantiated using literals.
+Example:
+var y: Long = 7483;
+val x: Int = 23456;
+va z : Char = 'Z';
+
+![Scala Implicit type casting heirarhy](https://docs.scala-lang.org/resources/images/tour/type-casting-diagram.svg)
+
+
 
 
     
