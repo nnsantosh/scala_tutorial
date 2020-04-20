@@ -272,14 +272,14 @@ Spark RDD, they implement all transformations as lazy operations.
 Scala gives lazy alternative to List and it is called Stream.
 Lazy evaluations can combine operations.
 
-Lets take a simple use case where we want to parse log file and filter first two lines containing text "error" from this file.
-Using strict evaluation:
-val s = Source.fromFile("/root/ws/test_proj/error.log").getLines().toList.filter(_.contains("[error]")).take(2)
-Using stream:
-val s = Source.fromFile("/root/ws/test_proj/error.log").getLines().toStream.filter(_.contains("[error]")).take(2)
+Lets take a simple use case where we want to parse log file and filter first two lines containing text "error" from this file. <br/>
+Using strict evaluation: <br/>
+val s = Source.fromFile("/root/ws/test_proj/error.log").getLines().toList.filter(_.contains("[error]")).take(2) <br/>
+Using stream:<br/>
+val s = Source.fromFile("/root/ws/test_proj/error.log").getLines().toStream.filter(_.contains("[error]")).take(2) <br/>
 
-Stream -> Gets one line + applies filter
-List -> Gets all lines + Applies filter to all the lines
+Stream -> Gets one line + applies filter <br/>
+List -> Gets all lines + Applies filter to all the lines <br/>
 
 The list is evaluating one operation at a time for all the lines. But the stream combines multiple operations and implements all of them together on each line.
 This kind of approach gives an advantage when we are dealing with large volumes of data and applying a series of operations.
