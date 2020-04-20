@@ -72,6 +72,59 @@ Since scala interprets return type we skipped specifying the return type. Howeve
  
  val f:Int => Int = (x:Int) => {x+5}:Int <br/>
  
+ ## Where do we use function literals? 
+ Most of time we use function literals with higher order functions.
+ Example: map function
+ val data = List(120, 130,150)
+ val res = data.map(x => x + 10)
+ 
+ ## Placeholder syntax
+ Lets take example of map and reduce functions in scala:
+ 
+ val data = List(120, 130,150) <br/>
+ val res = data.map(x => x + 10) <br/>
+ val res1 = data.reduce((x,y) => x +y) <br/>
+ 
+ Since map and reduce function definitions are enforced by the compiler there is no need to specify input parameters for the function.
+ But if we try below syntax the compiler will complain as to what is x and what is y
+ val res = data.map(x+10) <br/>
+ val res1 = data.reduce(x+y) <br/>
+ 
+ So we need to replace the reference to the parameters with an underscore as shown below:
+  val res = data.map(_ + 10) <br/>
+  val res1 = data.reduce(_ + _) <br/>
+ 
+This is known as placeholder syntax. The placeholder syntax makes it possible to remove the list of parameters. We only give the body and tell Scala that we want to use the parameter here.
+The first underscore represents the first parameter.
+The second underscore represents the second parameter and so on.
+The number of parameters and the number of underscores must be same. Scala will fill in the parameters in a sequence.
+
+Consider below example:
+data.reduce((x,y) => x+y/x min y)
+In this example we cannot replace the parameters with underscore because we are using the parameters more than once in the body.
+
+## Function values
+Consider below function literal:
+val f = (x:Int) => x + 10
+In this line f is function value whereas the code here is the function literal.
+Value is like object and function literal is like class.
+
+## Local Functions
+Local functions are like private methods. You can define function inside a function. They are visible only in their enclosing block.
+They are also referred to as nested function.
+
+## Higher Order Functions
+Can take function as an argument
+Can return a function
+
+
+
+
+
+ 
+ 
+ 
+ 
  
  
  
