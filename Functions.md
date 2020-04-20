@@ -33,7 +33,7 @@ If a function has single line in the body then even the curly braces can be elim
 def myMax(x:Int,y:Int):Int= if(x > y) x else y <br/>
 
 Scala compiler can interpret return type of a function so removing that the function would look like this: <br />
-def myMax(x:Int,y:Int) = if(x > y) x
+def myMax(x:Int,y:Int) = if(x > y) x <br/>
 
 
 1. Semicolon after every line is optional since we use enter key to start new line.
@@ -100,12 +100,12 @@ The second underscore represents the second parameter and so on.
 The number of parameters and the number of underscores must be same. Scala will fill in the parameters in a sequence.
 
 Consider below example:
-data.reduce((x,y) => x+y/x min y)
+data.reduce((x,y) => x+y/x min y) <br/>
 In this example we cannot replace the parameters with underscore because we are using the parameters more than once in the body.
 
 ## Function values
 Consider below function literal:
-val f = (x:Int) => x + 10
+val f = (x:Int) => x + 10 <br/>
 In this line f is function value whereas the code here is the function literal.
 Value is like object and function literal is like class.
 
@@ -114,8 +114,8 @@ Local functions are like private methods. You can define function inside a funct
 They are also referred to as nested function.
 
 ## Higher Order Functions
-Can take function as an argument
-Can return a function
+Can take function as an argument <br/>
+Can return a function <br/>
 
 
 
