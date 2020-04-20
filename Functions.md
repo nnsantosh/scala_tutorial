@@ -56,6 +56,23 @@ Then it can be called as: <br/>
  
  ## Function Literals
  
+ Also known as :
+ 1. Anonymous functions
+ 2. Lambda expressions
+ 
+ Functions are the first class citizens.
+ 
+ val f = (x:Int) => {x+5} <br/>
+ 
+Since scala interprets return type we skipped specifying the return type. However it can be specified as shown: <br />
+
+ val f = (x:Int) => {x+5}:Int <br/>
+ 
+ We can also specify the input type and return type of the function as shown below: <br />
+ 
+ val f:Int => Int = (x:Int) => {x+5}:Int <br/>
+ 
+ 
  
  
 
