@@ -136,8 +136,85 @@ val sumRes = sumX(3,5,(x,y) => x*x*x + y*y*y) <br/>
 println(sumRes) <br/>
 Result will be 152 <br/>
 
+Lets take an example of a function that returns another function as output: <br/>
+
+ def greetSomeOne(prefix:String): String => Unit ={ <br/>
+    (name:String) => println(prefix + " " + name) <br/>
+  } <br/>
+
+ val hiSomeOne = greetSomeOne("Hi") <br/>
+ val hiSantosh = hiSomeOne("Santosh") <br/>
+ println(hiSantosh) <br/>
+ Result will be: Hi Santosh <br/>
+ The same thing can be achieved in single step using: <br/>
+ greetSomeOne("Hi")("Santosh") <br/>
+ This method of calling function in a series is known as function currying <br/>
+ 
+Whenever you want to return function from another function make sure the last expression in the function is an anonymous function.
+Lets take another example:
+def f1(x:Int): Int => Double ={ <br/>
+    println(Math.sqrt(x)) <br/>
+    (y:Int) => Math.sqrt(x+y) <br/>
+} <br/>
+
+ val res1 = f1(9)(7)  <br/>
+ println(res1) <br/>
+ Result will be 4.0 <br/>
+ 
+ In the above function if we remove println then it becomes single expression function and can be replaced as shown below: <br/>
+ 
+ val f1 = (x:Int) => (y:Int) => Math.sqrt(x+y) <br/>
+ 
+ ## Named Arguments and Default Value
+ 
+  ### Variable length argument
+    def echo(s:String*) = s foreach println <br/>
+    echo("one","two","three) <br/>
+   
+ 1. The repeating argument must be the last argument. <br/>
+ 2. All values must be of same data type. <br/>
+ 3. All values are packed into an array. <br/>
+ 
+ ### Named arguments
+Consider below function: <br/>
+def doSomething(f:String => Unit,s:String)=f(s) <br/>
+doSomething(x => println("[" + x + "]"),"Hi There!") <br/>
+Result will be [Hi There!] <br/>
+
+Now if we try to change the order of parameter values while invoking the function: <br/>
+doSomething("Hi There!",x => println("[" + x + "]")) <br/>
+Now we get an error.
+
+Named arguments allow us to pass the input parameter values in a different order. <br/>
+doSomething(s = "Hi There!",f = x => println("[" + x + "]")) <br/>
+Result will be [Hi There!] <br/>
+
+Named arguments makes sense if we give default values for arguments.
+Let us take previous example and assign default value println for the first parameter
+def doSomething(f:String => Unit=println,s:String)=f(s) <br/>
+
+Now if we give only one parameter for the method during invocation we get error saying not enough arguments: <br/>
+doSomething("Hi There!") <br/>
+
+Now use the named argument and you can skip the first argument since it has default value <br/>
+doSomething(s="Hi There!") <br/>
+Result will be: Hi There! <br/>
+
+To make some parameters optional use the default value to define them and then use the named argument to call them.
 
 
+
+
+
+ 
+  
+    
+ 
+ 
+ 
+ 
+
+  
 
 
  
