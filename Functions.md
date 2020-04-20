@@ -189,8 +189,8 @@ Named arguments allow us to pass the input parameter values in a different order
 doSomething(s = "Hi There!",f = x => println("[" + x + "]")) <br/>
 Result will be [Hi There!] <br/>
 
-Named arguments makes sense if we give default values for arguments.
-Let us take previous example and assign default value println for the first parameter
+Named arguments makes sense if we give default values for arguments. <br/>
+Let us take previous example and assign default value println for the first parameter <br/>
 def doSomething(f:String => Unit=println,s:String)=f(s) <br/>
 
 Now if we give only one parameter for the method during invocation we get error saying not enough arguments: <br/>
