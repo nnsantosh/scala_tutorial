@@ -117,6 +117,25 @@ They are also referred to as nested function.
 Can take function as an argument <br/>
 Can return a function <br/>
 
+Lets take an example for passing function as an argument to a function: <br/>
+
+def intDecorator(x:Int, f: Int => String)={ <br/>
+  f(x) <br/>
+} <br/>
+
+val decRes = intDecorator(5, (x:Int) => { "[" + x + "]"}) <br/>
+println(decRes) <br/>
+Result will be [5] <br/>
+
+Lets take another example for passing function as an argument to a function: <br/>
+def sumX(x:Int, y:Int, f: (Int,Int) => Int)={ <br/>
+  f(x,y) <br/>
+} <br/>
+
+val sumRes = sumX(3,5,(x,y) => x*x*x + y*y*y) <br/>
+println(sumRes) <br/>
+Result will be 152 <br/>
+
 
 
 
