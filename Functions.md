@@ -26,7 +26,7 @@ def myMax(x:Int,y:Int):Int={ <br/>
   if(x > y) x else y <br/>
 } <br/>
 
-If a function has single line in the body then even the curly braces can be eliminated as below:
+If a function has single line in the body then even the curly braces can be eliminated as below: <br/>
 def myMax(x:Int,y:Int):Int= if(x > y) x else y <br/>
 
 
