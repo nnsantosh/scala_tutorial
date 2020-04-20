@@ -99,12 +99,12 @@ The first underscore represents the first parameter.
 The second underscore represents the second parameter and so on.
 The number of parameters and the number of underscores must be same. Scala will fill in the parameters in a sequence.
 
-Consider below example:
+Consider below example: <br/>
 data.reduce((x,y) => x+y/x min y) <br/>
 In this example we cannot replace the parameters with underscore because we are using the parameters more than once in the body.
 
 ## Function values
-Consider below function literal:
+Consider below function literal: <br/>
 val f = (x:Int) => x + 10 <br/>
 In this line f is function value whereas the code here is the function literal.
 Value is like object and function literal is like class.
