@@ -202,6 +202,51 @@ Result will be: Hi There! <br/>
 
 To make some parameters optional use the default value to define them and then use the named argument to call them.
 
+## Partially applied funtions
+Every function can be broken into two parts: <br/>
+1. Fixed part <br/>
+2. Variable part <br/>
+We keep the fixed part in the body and pull the variable part outside as parameters. <br/>
+
+Example: <br/>
+Division: def div(x:Double,y:Double):Double = x/y <br/>
+Addition: def add(x:Double,y:Double):Double = x + y <br/>
+
+Fixing some of the variable part can give entirely new solution: <br/>
+ def inv(y:Double):Double = 1.0/y 
+ def increment(y:Double):Double = 1 + y
+ 
+ Division is general solution and inverse is particular solution.
+ Similarly addition is a general solution and increment is particular solution.
+ 
+So the idea is like this take a generic function  and fix values for some of the parameters and you get new specialized functions.
+This is known as partially applied functions.
+
+Lets take division example:
+def div(x:Double,y:Double):Double = x/y <br/>
+Now fix the parameter value for first parameter and give a placeholder for second parameter.  <br/>
+We are applying division to the first argument. We leave the second parameter unapplied. And that is how the term partially applied function comes.  <br/>
+val inv = div(1,_:Double)  <br/>
+If we call this partially applied function scala will return new function.  <br/>
+Now the inverse function takes only one argument.  <br/>
+inv(y:Double) -> inv(10) -> 0.1  <br/>
+
+Consider another example:  <br/>
+def sum(x:Int,y:Int,z:Int)= x+ y + z  <br/>
+
+In order to convert this into partially applied function:  <br/>
+val s3 = sum(_:Int,_:Int,_:Int)  <br/>
+
+s3 is function value and sum is function definition.  <br/>
+
+This can also be written as: <br/>
+val s4 = sum_
+
+## Function currying
+TODO
+
+
+
 
 
 
