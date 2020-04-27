@@ -48,19 +48,19 @@ A function that does atleast one of the following is a higher order function:
 2. Returns a function as its result.
 
 ## Anonymous Function
-If you don't give a name to a function then it is an anonymous function.
-Example:
-Standard function
-def doubler(i : Int):Int={
-  return i * 2
-}
-Anonymous function
-(i:Int) => {i * 2}:Int
+If you don't give a name to a function then it is an anonymous function. <br/>
+Example: <br/>
+Standard function <br/>
+def doubler(i : Int):Int={ <br/>
+  return i * 2 <br/>
+} <br/>
+Anonymous function <br/>
+(i:Int) => {i * 2}:Int <br/>
 
-This syntax is known as function literal syntax.
-You can assign anonymous function to a variable in order to  call it.
-val x = (i:Int) => {i*2}:Int
-You can call it using x(5)
+This syntax is known as function literal syntax. <br/>
+You can assign anonymous function to a variable in order to  call it. <br/>
+val x = (i:Int) => {i*2}:Int <br/>
+You can call it using x(5) <br/>
 
 ## What is the purpose of an anonymous function?
 There might be scenarios where you want to create an inline function for one time usage.
