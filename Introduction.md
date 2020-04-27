@@ -13,18 +13,18 @@ Scala shines for big data processing and machine learning
 ## SBT (The Simple Build Tool)
 Its a build tool for scala projects
 Sccala projects follow same structure as java projects
-Main Project folder
+Main Project folder <br/>
 
-  build.sbt
-  src
-  &nbsp;&nbsp;main  
-  &nbsp;&nbsp;&nbsp;&nbsp;java
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scala
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources
-  &nbsp;&nbsp;&nbsp;&nbsp;test  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scala
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources
+  build.sbt <br/>
+  src <br/>
+  &nbsp;&nbsp;main <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;java <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scala <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;test <br/>  
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scala <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources <br/>
           
  Notice that sbt definition is in build.sbt file similar to pom.xml in a maven project
 To compile and run the project the command used is : sbt run from the main project folder
