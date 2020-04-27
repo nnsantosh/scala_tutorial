@@ -29,8 +29,8 @@ class Box(var height:Int, var width:Int, var depth:Int){ <br/>
 &nbsp;&nbsp;} <br/>
 } <br/>
 
-Always make the all arguments constructor as the primary constructor.
-One more rule for auxiliary constructor is that it should always begin with a call to the previously defined auxiliary constructor or the primary constructor.
+Always make the all arguments constructor as the primary constructor. <br/>
+One more rule for auxiliary constructor is that it should always begin with a call to the previously defined auxiliary constructor or the primary constructor. <br/>
 
 
 
