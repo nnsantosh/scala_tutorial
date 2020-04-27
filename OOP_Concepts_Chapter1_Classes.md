@@ -76,7 +76,15 @@ So if there is no need to impose validation in setter then you can use single li
 
 NOTE: The method  with the underscore for setter tells Scala compiler to accept value using = symbol. <br/>
 
-Whenever you need default reader and writer using public fields in class. But if you want to implement custom reader and writer use private fields in class. <br/>
+Whenever you need default reader and writer use public fields in class. But if you want to implement custom reader and writer use private fields in class. <br/>
 
-
+Consider the following:  <br/>
+class Cirlce{ <br/>
+ val radius = 0 <br/>
+} <br/>
+Since val is constant there will be no setter and only public getter will be available for accessing radius. <br/>
+But if we dont want even the public getter then we can do the following: <br/>
+class Cirlce{ <br/>
+ private val radius = 0 <br/>
+} <br/>
 
