@@ -14,20 +14,20 @@ In this case Scala makes radius object private field. It is as good as private v
 Whenever primary constructor is created we lose the default constructor.
 
 ### Auxiliary Constructor
-Example:
-Let us assume we have Box class that has 3 attributes height,width and depth.
-class Box(var height:Int, var width:Int, var depth:Int){}
-In the above case Primary constructor is created with 3 fields.
-Now in let us say we need another constructor with only 2 arguments height and width and also the default constructor without any arguments.
-class Box(var height:Int, var width:Int, var depth:Int){
-&nbsp;&nbsp;def this(){
-&nbsp;&nbsp;&nbsp;&nbsp;this(1,1,1)
-&nbsp;&nbsp;}
+Example: <br/>
+Let us assume we have Box class that has 3 attributes height,width and depth. <br/>
+class Box(var height:Int, var width:Int, var depth:Int){} <br/>
+In the above case Primary constructor is created with 3 fields. <br/>
+Now in let us say we need another constructor with only 2 arguments height and width and also the default constructor without any arguments. <br/>
+class Box(var height:Int, var width:Int, var depth:Int){ <br/>
+&nbsp;&nbsp;def this(){ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;this(1,1,1) <br/>
+&nbsp;&nbsp;} <br/>
   
-&nbsp;&nbsp;def this(height:Int,width:Int){
-&nbsp;&nbsp;&nbsp;&nbsp;this(height,width,1)
-&nbsp;&nbsp;}
-}
+&nbsp;&nbsp;def this(height:Int,width:Int){ <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;this(height,width,1) <br/>
+&nbsp;&nbsp;} <br/>
+} <br/>
 
 Always make the all arguments constructor as the primary constructor.
 
