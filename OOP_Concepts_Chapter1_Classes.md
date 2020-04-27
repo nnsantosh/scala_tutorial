@@ -49,11 +49,11 @@ class Circle { <br/>
   } <br/>
 
   def radius : Int = pradius <br/>
-  def radius_(r:Int): Unit ={ <br/>
-    if( r < 0){ <br/>
-      throw new Exception("negative value not allowed") <br/>
-    } else <br/>
-    this.pradius = r <br/>
+   def radius_= (r:Int)= {
+    if( r < 0){
+      throw new Exception("negative value not allowed")
+    } else
+    pradius = r
   } <br/>
    
   def main(args: Array[String]){ <br/>
