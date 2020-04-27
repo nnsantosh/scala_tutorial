@@ -19,12 +19,12 @@ Main Project folder <br/>
   src <br/>
   &nbsp;&nbsp;main <br/>
   &nbsp;&nbsp;&nbsp;&nbsp;java <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scala <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;test <br/>  
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;java <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scala <br/>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resources <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;scala <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;resources <br/>
+  &nbsp;&nbsp;test <br/>  
+  &nbsp;&nbsp;&nbsp;&nbsp;java <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;scala <br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;resources <br/>
           
  Notice that sbt definition is in build.sbt file similar to pom.xml in a maven project
 To compile and run the project the command used is : sbt run from the main project folder
