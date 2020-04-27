@@ -1,1 +1,35 @@
+## Constructors
+
+When you create a class in Scala without any arguments it will give you default constructor without arguments.
+Example: class Cirlce{}
+When you pass some arguments to the class then Scala will give Constructor with those arguments. We call that one primary constructor.
+Example: class Circle(var radius:Int){}
+
+If you dont specify var or val for the attribute of a class then Scala will not create reader and writer.
+Example:
+class Circle(radius:Int)
+In this case Scala makes radius object private field. It is as good as private val.
+
+### Primary Constructor
+Whenever primary constructor is created we lose the default constructor.
+
+### Auxiliary Constructor
+Example:
+Let us assume we have Box class that has 3 attributes height,width and depth.
+class Box(var height:Int, var width:Int, var depth:Int){}
+In the above case Primary constructor is created with 3 fields.
+Now in let us say we need another constructor with only 2 arguments height and width and also the default constructor without any arguments.
+class Box(var height:Int, var width:Int, var depth:Int){
+&nbsp;&nbsp;def this(){
+&nbsp;&nbsp;&nbsp;&nbsp;this(1,1,1)
+&nbsp;&nbsp;}
+  
+&nbsp;&nbsp;def this(height:Int,width:Int){
+&nbsp;&nbsp;&nbsp;&nbsp;this(height,width,1)
+&nbsp;&nbsp;}
+}
+
+Always make the all arguments constructor as the primary constructor.
+
+
 
