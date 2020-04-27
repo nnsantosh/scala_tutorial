@@ -26,7 +26,7 @@ Reader can be called as:  c.radius <br/>
 Writer can be called as: c.radius_ = (5) or c.radius = 5 <br/>
 
 
-Following is the concise syntax to create classes in scala with public attributes:
+Following is the concise syntax to create classes in scala with public attributes: <br/>
 class Customer(var id:Int, var name:String) <br/>
 
 To create objects of type Customer: <br/>
@@ -39,7 +39,7 @@ cust.name <br/>
 cust.id=102 <br/>
 cust.name = "ABC Corp" <br/>
 
-The main benefit of setter methods in java is that it allows to add some validation. But the same thing can be achieved in scala as shown below:
+The main benefit of setter methods in java is that it allows to add some validation. But the same thing can be achieved in scala as shown below: <br/>
 class Circle { <br/>
 
   private var pradius : Int = 0 <br/>
@@ -73,4 +73,10 @@ class Circle { <br/>
 Process finished with exit code 1 <br/>
 
 So if there is no need to impose validation in setter then you can use single line class definition with all public attributes. <br/>
+
+NOTE: The method  with the underscore for setter tells Scala compiler to accept value using = symbol. <br/>
+
+Whenever you need default reader and writer using public fields in class. But if you want to implement custom reader and writer use private fields in class. <br/>
+
+
 
