@@ -53,3 +53,6 @@ object Room{ <br/>
 &nbsp;&nbsp;} <br/>
   
 } <br/>
+
+Now to create instance of required Room type:
+val superDeluxeRoom = Room(Room.SUPER_DELUXE)
