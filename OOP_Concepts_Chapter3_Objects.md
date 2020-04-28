@@ -55,19 +55,19 @@ Object takes care of all static concerns and Class takes care of all non static 
 
 Example: <br/>
 class Graph(path:String){ <br/>
-&nbsp;&nbps;println("Load the Graph from file") <br/>
-&nbsp;&nbps;def numEdges = 506 <br/>
-&nbsp;&nbps;def numVertices = 305 <br/>
-&nbsp;&nbps;def persist(StorageLevel:Int)=println("Returns a new persisted graph") <br/>
+&nbsp;&nbsp;println("Load the Graph from file") <br/>
+&nbsp;&nbsp;def numEdges = 506 <br/>
+&nbsp;&nbsp;def numVertices = 305 <br/>
+&nbsp;&nbsp;def persist(StorageLevel:Int)=println("Returns a new persisted graph") <br/>
 } <br/>
 
 object Graph{ <br/>
-&nbsp;&nbps;val DISK_ONLY = 0 <br/>
-&nbsp;&nbps;val MEMORY_ONLY = 1 <br/>
-&nbsp;&nbps;val MEMORY_ONLY_COMPRESSED = 2 <br/>
-&nbsp;&nbps;val MEMORY_AND_DISK = 3 <br/>
-&nbsp;&nbps;val MEMORY_AND_DISK_COMPRESSED = 4 <br/>
-&nbsp;&nbps;def apply(path:String) = new Graph(path) <br/>
+&nbsp;&nbsp;val DISK_ONLY = 0 <br/>
+&nbsp;&nbsp;val MEMORY_ONLY = 1 <br/>
+&nbsp;&nbsp;val MEMORY_ONLY_COMPRESSED = 2 <br/>
+&nbsp;&nbsp;val MEMORY_AND_DISK = 3 <br/>
+&nbsp;&nbsp;val MEMORY_AND_DISK_COMPRESSED = 4 <br/>
+&nbsp;&nbsp;def apply(path:String) = new Graph(path) <br/>
 } <br/>
 
 With the above example we can instantiate graph object as below: <br/>
@@ -76,10 +76,10 @@ But since the constructor is not private we can also instantiate using: <br/>
 val graph = new Graph("Some location") <br/>
 If you want to prevent users from using constructor then make it private: <br/>
 class Graph private(path:String){ <br/>
-&nbsp;&nbps;println("Load the Graph from file") <br/>
-&nbsp;&nbps;def numEdges = 506 <br/>
-&nbsp;&nbps;def numVertices = 305 <br/>
-&nbsp;&nbps;def persist(StorageLevel:Int)=println("Returns a new persisted graph") <br/>
+&nbsp;&nbsp;println("Load the Graph from file") <br/>
+&nbsp;&nbsp;def numEdges = 506 <br/>
+&nbsp;&nbsp;def numVertices = 305 <br/>
+&nbsp;&nbsp;def persist(StorageLevel:Int)=println("Returns a new persisted graph") <br/>
 } <br/>
  
 This way only the apply method of the companion object will have to be used to instantiate Graph class. <br/>
