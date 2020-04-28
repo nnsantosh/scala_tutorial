@@ -32,7 +32,7 @@ object Room{ <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;override def book(noOfRooms: Int)={ <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;_availability =  _availability - noOfRooms <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
-&nbsp;&nbsp; <br/>
+&nbsp;&nbsp;} <br/>
   
 &nbsp;&nbsp;private class SuperDeluxeRoom extends Room{ <br/>
 &nbsp;&nbsp;&nbsp;&nbsp;private var _availability = 5 <br/>
